@@ -13,8 +13,7 @@ All processed data will be placed in processed_data/ after extraction (by defaul
 
 Training: Training a 4D-network in 4D/.
 
-Analysis and plots: An example of running a 4-dimensional already trained network is 4D/fastai_AE_3D_200_no1cycle_analysis.ipynb
-For an example of analysing a 27-D network is 27D/27D_analysis.py
+Analysis and plots: An example of running a 4-dimensional already trained network is 4D/fastai_AE_3D_200_no1cycle_analysis.ipynb.
 
 The folder named 4D/ holds training analysis scripts for that amount of dimensions. 
 
