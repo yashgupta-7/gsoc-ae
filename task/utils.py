@@ -20,9 +20,11 @@ from fastai import train as tr
 
 from nn_utils import get_data
 
+#standard deviation of error term
 def std_error(x, axis=None, ddof=0):
     return np.nanstd(x, axis=axis, ddof=ddof) / np.sqrt(2 * len(x))
 
+#plotting routine
 def plot_activations(learn, figsize=(12, 9), lines=['-', ':'], save=None, linewd=1, fontsz=14):
     plt.figure(figsize=figsize)
     for i in range(learn.activation_stats.stats.shape[1]):

@@ -1,0 +1,17 @@
+##File Structure
+
+my_matplotlib_style.py 		-> sets the default style for all matplotlib plots (comments provided)
+nn_utils.py 			-> contains the model parameters (comments provided)
+plot_activation_functions.py 	-> matplotlib code template for different activation functions 
+utils.py 			-> some utility functions (comments provided)
+processed_data/			-> contains training and test data in .pkl files
+4D/models			-> contains the saved model to prevent retraining
+4D/trainforever_plots		-> contains detailed plots obtained as png files
+4D/AED_4_to_3.ipynb		-> training model (AE from 4 vars to 3 vars) (comments provided)
+4D/AED_analysis.ipynb		-> analysis of performance of trained model  (comments provided)
+
+
+##How to Run
+1) All code has been run and results saved in the python notebooks 4D/AED_4_to_3.ipynb and 4D/AED_analysis.ipynb
+   respectively.
+2) Open the notebooks in Jupyter and run each cell to re-reproduce the results already given in the cells.

@@ -13,14 +13,16 @@ def set_my_style():
     mpl.rcParams['axes.grid'] = True
 
 
+#using scientific notation for y axis
 def sciy():
     plt.gca().ticklabel_format(style='sci', scilimits=(0, 0), axis='y')
 
-
+#using scientific notation for x axis
 def scix():
     plt.gca().ticklabel_format(style='sci', scilimits=(0, 0), axis='x')
 
 
+#conversion of color prgrams(hsv/rainbow) to rgb colors
 def colorprog(i_prog, Nplots, v1=.9, v2=1., cm='hsv'):
     if hasattr(Nplots, '__len__'):
         Nplots = len(Nplots)

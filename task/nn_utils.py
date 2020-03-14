@@ -10,6 +10,7 @@ import pandas as pd
 class AE_3D_200(nn.Module):
     def __init__(self, n_features=4):
         super(AE_3D_200, self).__init__()
+        #build the layer structure
         self.en1 = nn.Linear(n_features, 200)
         self.en2 = nn.Linear(200, 100)
         self.en3 = nn.Linear(100, 50)
@@ -20,6 +21,7 @@ class AE_3D_200(nn.Module):
         self.de4 = nn.Linear(200, n_features)
         self.tanh = nn.Tanh()
 
+    #using tanh() activation function for encoding/decoding
     def encode(self, x):
         return self.en4(self.tanh(self.en3(self.tanh(self.en2(self.tanh(self.en1(x)))))))
 
@@ -34,9 +36,11 @@ class AE_3D_200(nn.Module):
         return 'in-200-100-50-3-50-100-200-out'
 
 
+#yet another autoencoder module with a different structure
 class AE_big(nn.Module):
     def __init__(self, n_features=4):
         super(AE_big, self).__init__()
+        #build the layer structure
         self.en1 = nn.Linear(n_features, 8)
         self.en2 = nn.Linear(8, 6)
         self.en3 = nn.Linear(6, 4)
@@ -47,6 +51,7 @@ class AE_big(nn.Module):
         self.de4 = nn.Linear(8, n_features)
         self.tanh = nn.Tanh()
 
+    #using tanh() activation function for encoding/decoding
     def encode(self, x):
         return self.en4(self.tanh(self.en3(self.tanh(self.en2(self.tanh(self.en1(x)))))))
 
@@ -60,7 +65,7 @@ class AE_big(nn.Module):
     def describe(self):
         return 'in-8-6-4-3-4-6-8-out'
 
-
+#shuffle and sample given batch sizes from training and validation data
 def get_data(train_ds, valid_ds, bs):
     return (
         DataLoader(train_ds, batch_size=bs, shuffle=True, pin_memory=True),
